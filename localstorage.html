@@ -25,7 +25,7 @@
 <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="#">HTML5 Demos</a>
+            <a class="brand" href="index.html">HTML5 Demos</a>
 
             <div class="nav-collapse">
                 <ul class="nav">
@@ -38,27 +38,30 @@
 
 <div class="container">
 
-      <form name="editor">
-          <div>
-              <p>
-                  <label>Value:
-                      <textarea name="data" cols="41" rows="10"></textarea>
-                  </label>
-              </p>
-              <p>
-                  <label>Name: <input name="name">
-                  </label>
-                  <input type="button" value="getItem()" onclick="doGetItem()">
-                  <input type=button value="setItem()" onclick="doSetItem()">
-                  <input type=button value="removeItem()" onclick="doRemoveItem()">
-              </p>
+      <form class="form-horizontal" name="editor">
+          <div class="control-group">
+              <label class="control-label">Name:</label>
+              <div class="controls">
+                  <input name="name">
+              </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Value:</label>
+            <div class="controls">
+                <textarea name="data" cols="41" rows="10"></textarea>
+            </div>
+          </div>
+          <div class="form-actions">
+              <input class="btn-warning" type="button" value="getItem()" onclick="doGetItem()">
+              <input class="btn-success" type=button value="setItem()" onclick="doSetItem()">
+              <input class="btn-danger" type=button value="removeItem()" onclick="doRemoveItem()">
           </div>
           <div id="items_table">
               <h2>Items</h2>
-              <table id="pairs"></table>
+              <table class="table" id="pairs"></table>
               <p>
                   <label>
-                      <input type="button"   value="clear()" onclick="doClear()">
+                      <input type="button" class="btn-danger" value="clear()" onclick="doClear()">
                       <i>* clear() removes all items</i>
                   </label>
               </p>
