@@ -1,0 +1,118 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>HTML5 Demos</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/style.css?v=1">
+
+    <script src="js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="brand" href="index.html">HTML5 Demos</a>
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <progress id="ex1" class="styled" max="100" value="60"><strong>Progress: 60%</strong></progress>
+
+    <hr>
+
+    <footer>
+        <p>&copy; Thorsten Rinne 2012</p>
+    </footer>
+
+</div>
+<!-- /container -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+
+<script src="js/libs/bootstrap/transition.js"></script>
+<script src="js/libs/bootstrap/collapse.js"></script>
+<script src="js/script.js"></script>
+<script>
+    var progressTest = new function () {
+        var me = this;
+
+        var counter = 1;
+
+        me.init = function () {
+            $('progress').each( function (index, element) {
+                var $el = $(element);
+                if ($el.next().hasClass('arrow') || $el.next().hasClass('after')) {
+                    $el = $el.next();
+                }
+
+                if (!element.id) {
+                    element.id = 'id' + counter;
+                    counter++;
+                }
+
+
+                $el.after('<input type="submit" class="progressTest" data-for="'+ element.id + '" value="Test Progress Bar" />')
+            });
+
+            $('.progressTest').click(function (e) {
+                e.preventDefault();
+                var id = $(e.target).attr('data-for');
+
+                var el = $('#' + id ).get(0);
+
+                //$arrow.addClass('noTransition');
+                //el.value=0;
+                setTimeout(function () {
+                    startHelper(el);
+                }, 200);
+            });
+
+        }
+
+        function startHelper(el) {
+
+            startTimeout(0, el, 100);
+
+
+        }
+
+        function startTimeout(n, el, ms) {
+
+            var val = parseInt(el.value);
+            el.value = n;
+
+            if (parseInt(el.value) < 100) {
+                setTimeout(function() {
+                    startTimeout(n+10, el, ms)
+                }, ms);
+            }
+        }
+    }
+
+
+    $(document).ready(progressTest.init)
+</script>
+</body>
+</html>
