@@ -31,7 +31,7 @@
     backGradient.addColorStop(0, '#FFB225');
     ctx.fillStyle = backGradient;
     ctx.fillRect(0,0,document.getElementById(id).width, document.getElementById(id).height);
-    
+
     var width = document.getElementById(id).width, height = document.getElementById(id).height;
     ctx.fillStyle = "#fff";
     ctx.strokeStyle = "#fff";
@@ -41,18 +41,18 @@
     ctx.shadowOffsetY = 0;
     ctx.shadowBlur = width / 50;
     ctx.shadowColor = "#fff";
-    
+
     //Circle
     ctx.beginPath();
     ctx.arc(width * 0.2, height * 0.8, height * 0.05, 0, Math.PI*2, false);
     ctx.stroke();
-    
+
     ctx.lineWidth = ctx.lineWidth * 2;
     //First arc
     ctx.beginPath();
     ctx.arc(width * 0.2, height * 0.8, height * 0.3, -Math.PI/2, 0, false);
     ctx.stroke();
-    
+
     //Second arc
     ctx.beginPath();
     ctx.arc(width * 0.2, height * 0.8, height * 0.6, -Math.PI/2, 0, false);
@@ -89,7 +89,7 @@
     <hr>
 
     <footer>
-        <p>&copy; Thorsten Rinne 2012</p>
+        <p>&copy; 2012-2013 Thorsten Rinne</p>
     </footer>
 
 </div>
