@@ -32,3 +32,4 @@ nbproject
 .CVS
 .idea
 bower_components
+node_modules

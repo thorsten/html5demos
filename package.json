@@ -1,0 +1,19 @@
+{
+  "name": "html5demos",
+  "version": "1.0.0",
+  "description": "HTML5 Demo ==========",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thorsten/html5demos.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thorsten/html5demos/issues"
+  },
+  "homepage": "https://github.com/thorsten/html5demos#readme"
+}
