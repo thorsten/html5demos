@@ -9,3 +9,4 @@
 ## Add more examples
 
 * postMessage
+* Server-sent Events
